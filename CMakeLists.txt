@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.4)
 
-PROJECT(Kisip)
+PROJECT(deblurTC)
 
 MARK_AS_ADVANCED(CLEAR CMAKE_VERBOSE_MAKEFILE)
 OPTION(CMAKE_VERBOSE_MAKEFILE "if all commands will be echoed to the console during the make" ON)
@@ -65,7 +65,7 @@ FIND_LIBRARY(GSL_CBLAS_LIBRARY
 
 IF(GSL_LIBRARY)
 ELSE(GSL_LIBRARY)
-        MESSAGE(SEND_ERROR "ERROR: GSL not found. GSL is now required to use Kisip")
+        MESSAGE(SEND_ERROR "ERROR: GSL not found. GSL is now required to use deblurTC")
 ENDIF(GSL_LIBRARY)
 
 #
@@ -84,13 +84,13 @@ FIND_LIBRARY(FFTW_LIBRARY
 
 IF(FFTW_LIBRARY)
 ELSE(FFTW_LIBRARY)
-        MESSAGE(SEND_ERROR "ERROR: FFTW not found. FFTW is now required to use Kisip")
+        MESSAGE(SEND_ERROR "ERROR: FFTW not found. FFTW is now required to use deblurTC")
 ENDIF(FFTW_LIBRARY)
 
 # find mpi
 INCLUDE(${CMAKE_ROOT}/Modules/FindMPI.cmake)
 
-set(kisip_source_files				
+set(deblurTC_source_files				
 	apodize.c assemble.c bs_ave.c bs_init.c 
 	bs_red.c bs_snrt.c calc_subfields.c 
 	chkphase.c ctracker.c entry.c 
@@ -105,16 +105,16 @@ set(kisip_source_files
 	w_func.c 
 )
 
-set(kisip_source_files ${kisip_source_files} fileops.c)
+set(deblurTC_source_files ${deblurTC_source_files} fileops.c)
 
-ADD_EXECUTABLE(kisip ${kisip_source_files})
-SET_TARGET_PROPERTIES(kisip PROPERTIES LINKER_LANGUAGE C)
+ADD_EXECUTABLE(deblurTC ${deblurTC_source_files})
+SET_TARGET_PROPERTIES(deblurTC PROPERTIES LINKER_LANGUAGE C)
 
-INCLUDE_DIRECTORIES(${Kisip_SOURCE_DIR} ${FFTW_INCLUDE_PATH} ${GSL_INCLUDE_PATH} ${MPI_INCLUDE_PATH})
+INCLUDE_DIRECTORIES(${deblurTC_SOURCE_DIR} ${FFTW_INCLUDE_PATH} ${GSL_INCLUDE_PATH} ${MPI_INCLUDE_PATH})
 
-TARGET_LINK_LIBRARIES(kisip ${MATH_LIBRARY} ${FFTW_LIBRARY} ${GSL_LIBRARY} ${GSL_CBLAS_LIBRARY} ${MPI_LIBRARY} ${MPI_EXTRA_LIBRARY})
+TARGET_LINK_LIBRARIES(deblurTC ${MATH_LIBRARY} ${FFTW_LIBRARY} ${GSL_LIBRARY} ${GSL_CBLAS_LIBRARY} ${MPI_LIBRARY} ${MPI_EXTRA_LIBRARY})
 
-INSTALL_TARGETS(/bin kisip)
+INSTALL_TARGETS(/bin deblurTC)
 
 
 

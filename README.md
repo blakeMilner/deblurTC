@@ -8,7 +8,7 @@ images that contiain blurring or spatial shifting of an object of interest.
 This task has classically been carried out using cross-correlation for 
 and subsequent averaging. However, this method fails when the images are too 
 noisy; perfect alignment of frames is impossible in this case and the benefit 
-of averaging is limited. kisip utilizes a method in which alignment of images 
+of averaging is limited. deblurTC utilizes a method in which alignment of images 
 is implicit; in other words, alignment of the different frames is a direct 
 result of the mathematical transforms used. 
 
@@ -46,7 +46,7 @@ triple correlation theory and applications,” Applied Optics, Vol. 22, Issue 24
 * Paper discussing phase recovery algorithm:
 Matson, C., “Weighted-least-squares phase reconstruction from the bispectrum,” J. Opt. Soc., Vol. 8, No. 12 (1991).
 
-* kisip paper by authors:
+* Paper by authors:
 Woeger, F. and von der Luehe, O., “KISIP: A Software Package for Speckle Interferometry of Adaptive Optics Corrected Solar Data,” SPIE 7019 (2008). 
 
 * Speckle Interferometry paper by authors (including kisip):
@@ -80,7 +80,7 @@ Building and installing:
 
 Command-line usage:
 
-./kisip <SWITCH> <ARG> ... <FRAMES>
+./deblurTC <SWITCH> <ARG> ... <FRAMES>
 
 
 
