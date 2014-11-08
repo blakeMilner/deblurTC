@@ -91,18 +91,18 @@ ENDIF(FFTW_LIBRARY)
 INCLUDE(${CMAKE_ROOT}/Modules/FindMPI.cmake)
 
 set(kisip_source_files				
-						apodize.c assemble.c bs_ave.c bs_init.c 
-						bs_red.c bs_snrt.c calc_subfields.c 
-						chkphase.c ctracker.c entry.c 
-						free_vect.c getinfo.c  
-						init_matrix.c init_shift.c iwlspr.c 
-						mpi_master_rec.c 
-						mpi_mastering.c mpi_setmoddata.c mpi_setslavetype.c 
-						mpi_shutdown.c mpi_slaving.c phs_init.c 
-						putslaveinfo.c radial.c 
-						reconstruct.c rpr.c 
-						stats.c subfielding.c surfit.c 
-						w_func.c 
+	apodize.c assemble.c bs_ave.c bs_init.c 
+	bs_red.c bs_snrt.c calc_subfields.c 
+	chkphase.c ctracker.c entry.c 
+	free_vect.c getinfo.c  
+	init_matrix.c init_shift.c iwlspr.c 
+	mpi_master_rec.c 
+	mpi_mastering.c mpi_setmoddata.c mpi_setslavetype.c 
+	mpi_shutdown.c mpi_slaving.c phs_init.c 
+	putslaveinfo.c radial.c 
+	reconstruct.c rpr.c 
+	stats.c subfielding.c surfit.c 
+	w_func.c 
 )
 
 set(kisip_source_files ${kisip_source_files} fileops.c)

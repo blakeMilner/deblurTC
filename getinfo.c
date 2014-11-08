@@ -78,7 +78,7 @@ int getinfo(maininfo* out, int argc, char** argv)
 	out->tc.limApod = 			DEFAULT_APODLIM;
 
 	while ((ch = getopt_long(argc, argv, "oxyfsvwrpnea:", options, NULL)) != -1){
-		 switch (ch) { // make most of these not required...
+		 switch (ch) {
 			 case 'o':
 				 strcpy(out->savefiles, optarg);
 				 break;
@@ -117,8 +117,12 @@ int getinfo(maininfo* out, int argc, char** argv)
 			 case 'a':
 				 out->tc.limApod = (float) atof(optarg) / 100.0;
 				 break;
+			 default:
+				 fprintf(stderr, "Command-line switch not recognized.\n");
+				 break;
 		 }
 	 }
+
 	 argc -= optind;
 	 argv += optind;
 
@@ -137,16 +141,11 @@ int getinfo(maininfo* out, int argc, char** argv)
 		 strcpy(out->imagefiles[i], argv[i]);
 	 }
 
-#ifndef EMAN2
 	 if( !xPresent || !yPresent ){
 		 fprintf(stderr, "ERROR: pixels in x- and y-direction required.\n");
 		 return(NOGO);
 	 }
-#else
-	 if( xPresent || yPresent ){
-		 fprintf(stderr, "Pixels in x- and y-direction not needed, ignored.\n");
-	 }
-#endif
+
 
 	 return(GO);
 }

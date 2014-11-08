@@ -94,15 +94,10 @@ void mpi_mastering(int argc, char **argv)
 //	reconstruction process.
 //---------------------------------------------------------------------------
 
-#ifdef EMAN2
-    if( getinfo(&info, argc, argv) && getsize(&info, info.imagefiles[0]) ){
-    	alldata = malloc(info.xsize * info.ysize * info.nrofframes * sizeof(float));
-    }
-#else
+
     if( getinfo(&info, argc, argv) ){
     	alldata = malloc(info.xsize * info.ysize * info.nrofframes * sizeof(float));
     }
-#endif
 
     if ( (alldata != NULL) && readims(info.imagefiles, &info, alldata) ) {
 
