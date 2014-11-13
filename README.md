@@ -69,10 +69,10 @@ Requirements:
  * CMake -- A cross-platform, open-source build system
  
 Building and installing:
- > ccmake CMakeLists.txt
- > cmake CMakeLists.txt
- > make
- > make install
+./ccmake CMakeLists.txt
+./cmake CMakeLists.txt
+./make
+./make install
  
 
 == Usage ==
@@ -80,13 +80,13 @@ Building and installing:
 
 Command-line usage:
 
-./deblurTC <SWITCH> <ARG> ... <FRAMES>
+./deblurTC _SWITCH_ _ARG_ ... _FRAMES_
 
 
 
 Image format:
 
-	Unfortunately, this software package does not yet support typical image
+Unfortunately, this software package does not yet support typical image
 formats. Image inputs must be a plain, binary, greyscale image format that
 uses 4 bytes for each pixel.
 
@@ -94,52 +94,52 @@ uses 4 bytes for each pixel.
 
 Command-line options:
 
---o	(-output) <NAME> 
+--o	(-output) _NAME_ 
 
 	name of output file
 
---x	(-xsize)  <XSIZE> 
+--x	(-xsize)  _XSIZE_ 
 	
 	number of x-pixels in each frame
 
---y	(-ysize)  <YSIZE> 
+--y	(-ysize)  _YSIZE_ 
 
 	number of y-pixels in each frame
 	
---h	(-headersize)  <HSIZE> 
+--h	(-headersize)  _HSIZE_ 
 
 	number of bytes in header of each frame (will be skipped)
 	
---s	(-subsize)  <SSIZE>
+--s	(-subsize)  _SSIZE_
 
 	side length of square subfields used to dissect image, later sent to 
 	different slave nodes. Must be a power of two - otherwise, will be rounded 
 	to nearest power of two.
 
---v  (-bs1length)  <BS1LENGTH>
+--v  (-bs1length)  _BS1LENGTH_
 
 	length in u-direction of bispectrum (translates to increased resolution of
 	final image).
 	
---u  (-bs2length)  <BS1LENGTH>
+--u  (-bs2length)  _BS1LENGTH_
 
 	length in v-direction of bispectrum (translates to increased resolution of
 	final image).
 		
---r  (-maxrad)  <MAXRAD>
+--r  (-maxrad)  _MAXRAD_
 
 	maximum phase reconstruction radius (translates to increased resolution of
 	final image).
 		
---p  (-maxiter)  <MAXITER>
+--p  (-maxiter)  _MAXITER_
 
 	maximum number of iterations for phase reconstruction algorithm.
 	
---e  (-weightexp)  <WEXP>
+--e  (-weightexp)  _WEXP_
 
 	value of exponential power used during phase reconstruction (Advanced).
 	
---a	(-apod)  <APOD>
+--a	(-apod)  _APOD_
 
 	percent of field that is windowed before transformation to bispectrum 
 	(between 0 and 100). Image must be apodized to prevent artifacts in final 
