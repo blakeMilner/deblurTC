@@ -69,10 +69,11 @@ Requirements:
  * CMake -- A cross-platform, open-source build system
  
 Building and installing:
-./ccmake CMakeLists.txt
-./cmake CMakeLists.txt
-./make
-./make install
+
+ccmake CMakeLists.txt
+cmake CMakeLists.txt
+make
+make install
  
 
 == Usage ==
