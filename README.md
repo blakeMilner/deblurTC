@@ -70,10 +70,10 @@ Requirements:
  
 Building and installing:
 
-ccmake CMakeLists.txt
-cmake CMakeLists.txt
-make
-make install
+1. ccmake CMakeLists.txt
+2. cmake CMakeLists.txt
+3. make
+4. make install
  
 
 == Usage ==
