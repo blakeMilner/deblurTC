@@ -2,10 +2,10 @@
 == Background ==
 ================
 
-Image deblurring and alignment using a series of images (from dozens to 
-thousands). This method is highly effective for series of many low exposure 
-images that contiain blurring or spatial shifting of an object of interest. 
-This task has classically been carried out using cross-correlation for 
+This package performs image deblurring and alignment using a series of images 
+(from dozens to thousands). This method is highly effective for series of many 
+low exposure images that contiain blurring or spatial shifting of an object of 
+interest. This task has classically been carried out using cross-correlation for 
 and subsequent averaging. However, this method fails when the images are too 
 noisy; perfect alignment of frames is impossible in this case and the benefit 
 of averaging is limited. deblurTC utilizes a method in which alignment of images 
@@ -17,6 +17,9 @@ package is suitable for a computing cluster. This package was originally
 developed and used for speckle interferometry by astrophysics studying the sun 
 and was originally coded by Friedrich Wöger and Oskar von der Lühe II: 
 http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1336991
+
+This package was developed and altered by Blake Milner and Wen Jiang as part of
+a project through Discovery Park at Purdue.
 
 The portions of this code pertaining to astrophysics (such as telescope 
 diffraction, modeling of atmospheric aberrations, etc.) has been stripped out 
@@ -70,19 +73,21 @@ Requirements:
  
 Building and installing:
 
-1. ccmake CMakeLists.txt
-2. cmake CMakeLists.txt
-3. make
-4. make install
- 
+```bash
+ccmake CMakeLists.txt
+cmake CMakeLists.txt
+make
+make install
+```
 
 == Usage ==
 ===========
 
 Command-line usage:
 
+```bash
 ./deblurTC _SWITCH_ _ARG_ ... _FRAMES_
-
+```
 
 
 Image format:
